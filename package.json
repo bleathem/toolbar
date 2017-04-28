@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "copy": "copy src/**/*.html dist/",
+    "build": "./script/build.js",
+    "watch": "watch ./script/build.js src",
+    "serve": "browser-sync start --server --port 8080 --files 'dist/**/*' --startPath 'dist'",
+    "start": "npm run watch & npm run serve"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/bleathem/toolbar/issues"
   },
-  "homepage": "https://github.com/bleathem/toolbar#readme"
+  "homepage": "https://github.com/bleathem/toolbar#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.2",
+    "copy": "^0.3.0",
+    "handlebars": "^4.0.6",
+    "handlebars-helpers": "^0.7.7",
+    "rx": "^4.1.0",
+    "watch": "^1.0.1"
+  }
 }

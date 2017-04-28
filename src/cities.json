@@ -1,0 +1,402 @@
+[
+	{
+		"city": "Olathe",
+		"region": "Kansas"
+	},
+	{
+		"city": "Warren",
+		"region": "Michigan"
+	},
+	{
+		"city": "Kapolei",
+		"region": "Hawaii"
+	},
+	{
+		"city": "Flint",
+		"region": "Michigan"
+	},
+	{
+		"city": "Colorado Springs",
+		"region": "Colorado"
+	},
+	{
+		"city": "Kenosha",
+		"region": "Wisconsin"
+	},
+	{
+		"city": "Paradise",
+		"region": "Nevada"
+	},
+	{
+		"city": "Detroit",
+		"region": "Michigan"
+	},
+	{
+		"city": "Provo",
+		"region": "Utah"
+	},
+	{
+		"city": "Boise",
+		"region": "Idaho"
+	},
+	{
+		"city": "Sterling Heights",
+		"region": "Michigan"
+	},
+	{
+		"city": "Rutland",
+		"region": "Vermont"
+	},
+	{
+		"city": "Lansing",
+		"region": "Michigan"
+	},
+	{
+		"city": "Baton Rouge",
+		"region": "Louisiana"
+	},
+	{
+		"city": "Baton Rouge",
+		"region": "Louisiana"
+	},
+	{
+		"city": "Shreveport",
+		"region": "Louisiana"
+	},
+	{
+		"city": "Burlington",
+		"region": "Vermont"
+	},
+	{
+		"city": "West Valley City",
+		"region": "Utah"
+	},
+	{
+		"city": "Cedar Rapids",
+		"region": "Iowa"
+	},
+	{
+		"city": "Huntsville",
+		"region": "Alabama"
+	},
+	{
+		"city": "Shreveport",
+		"region": "Louisiana"
+	},
+	{
+		"city": "Casper",
+		"region": "Wyoming"
+	},
+	{
+		"city": "Sandy",
+		"region": "Utah"
+	},
+	{
+		"city": "Salt Lake City",
+		"region": "Utah"
+	},
+	{
+		"city": "Little Rock",
+		"region": "Arkansas"
+	},
+	{
+		"city": "Athens",
+		"region": "Georgia"
+	},
+	{
+		"city": "Salem",
+		"region": "Oregon"
+	},
+	{
+		"city": "College",
+		"region": "Alaska"
+	},
+	{
+		"city": "Billings",
+		"region": "Montana"
+	},
+	{
+		"city": "Colorado Springs",
+		"region": "Colorado"
+	},
+	{
+		"city": "Shreveport",
+		"region": "Louisiana"
+	},
+	{
+		"city": "Columbia",
+		"region": "Maryland"
+	},
+	{
+		"city": "Fairbanks",
+		"region": "Alaska"
+	},
+	{
+		"city": "Milwaukee",
+		"region": "Wisconsin"
+	},
+	{
+		"city": "Cleveland",
+		"region": "Ohio"
+	},
+	{
+		"city": "Bangor",
+		"region": "Maine"
+	},
+	{
+		"city": "Madison",
+		"region": "Wisconsin"
+	},
+	{
+		"city": "Racine",
+		"region": "Wisconsin"
+	},
+	{
+		"city": "Saint Paul",
+		"region": "Minnesota"
+	},
+	{
+		"city": "Naperville",
+		"region": "Illinois"
+	},
+	{
+		"city": "Sioux City",
+		"region": "Iowa"
+	},
+	{
+		"city": "Waterbury",
+		"region": "Connecticut"
+	},
+	{
+		"city": "Montpelier",
+		"region": "Vermont"
+	},
+	{
+		"city": "Mesa",
+		"region": "Arizona"
+	},
+	{
+		"city": "Birmingham",
+		"region": "Alabama"
+	},
+	{
+		"city": "Bridgeport",
+		"region": "Connecticut"
+	},
+	{
+		"city": "Independence",
+		"region": "Missouri"
+	},
+	{
+		"city": "Baltimore",
+		"region": "Maryland"
+	},
+	{
+		"city": "Jonesboro",
+		"region": "Arkansas"
+	},
+	{
+		"city": "Athens",
+		"region": "Georgia"
+	},
+	{
+		"city": "Tampa",
+		"region": "Florida"
+	},
+	{
+		"city": "Salt Lake City",
+		"region": "Utah"
+	},
+	{
+		"city": "Idaho Falls",
+		"region": "Idaho"
+	},
+	{
+		"city": "Anchorage",
+		"region": "Alaska"
+	},
+	{
+		"city": "Madison",
+		"region": "Wisconsin"
+	},
+	{
+		"city": "Overland Park",
+		"region": "Kansas"
+	},
+	{
+		"city": "Jacksonville",
+		"region": "Florida"
+	},
+	{
+		"city": "West Jordan",
+		"region": "Utah"
+	},
+	{
+		"city": "Lewiston",
+		"region": "Maine"
+	},
+	{
+		"city": "Clarksville",
+		"region": "Tennessee"
+	},
+	{
+		"city": "Biloxi",
+		"region": "Mississippi"
+	},
+	{
+		"city": "Billings",
+		"region": "Montana"
+	},
+	{
+		"city": "Little Rock",
+		"region": "Arkansas"
+	},
+	{
+		"city": "Fairbanks",
+		"region": "Alaska"
+	},
+	{
+		"city": "Ketchikan",
+		"region": "Alaska"
+	},
+	{
+		"city": "Reno",
+		"region": "Nevada"
+	},
+	{
+		"city": "Gaithersburg",
+		"region": "Maryland"
+	},
+	{
+		"city": "Aurora",
+		"region": "Illinois"
+	},
+	{
+		"city": "Carson City",
+		"region": "Nevada"
+	},
+	{
+		"city": "Sandy",
+		"region": "Utah"
+	},
+	{
+		"city": "San Jose",
+		"region": "California"
+	},
+	{
+		"city": "Norman",
+		"region": "Oklahoma"
+	},
+	{
+		"city": "Olathe",
+		"region": "Kansas"
+	},
+	{
+		"city": "Flint",
+		"region": "Michigan"
+	},
+	{
+		"city": "Norman",
+		"region": "Oklahoma"
+	},
+	{
+		"city": "Shreveport",
+		"region": "Louisiana"
+	},
+	{
+		"city": "Laramie",
+		"region": "Wyoming"
+	},
+	{
+		"city": "Green Bay",
+		"region": "Wisconsin"
+	},
+	{
+		"city": "Annapolis",
+		"region": "Maryland"
+	},
+	{
+		"city": "Helena",
+		"region": "Montana"
+	},
+	{
+		"city": "Virginia Beach",
+		"region": "Virginia"
+	},
+	{
+		"city": "Anchorage",
+		"region": "Alaska"
+	},
+	{
+		"city": "Carson City",
+		"region": "Nevada"
+	},
+	{
+		"city": "Springdale",
+		"region": "Arkansas"
+	},
+	{
+		"city": "Gulfport",
+		"region": "Mississippi"
+	},
+	{
+		"city": "Glendale",
+		"region": "Arizona"
+	},
+	{
+		"city": "Bellevue",
+		"region": "Nebraska"
+	},
+	{
+		"city": "Virginia Beach",
+		"region": "Virginia"
+	},
+	{
+		"city": "San Antonio",
+		"region": "Texas"
+	},
+	{
+		"city": "Richmond",
+		"region": "Virginia"
+	},
+	{
+		"city": "South Portland",
+		"region": "Maine"
+	},
+	{
+		"city": "St. Petersburg",
+		"region": "Florida"
+	},
+	{
+		"city": "Glendale",
+		"region": "Arizona"
+	},
+	{
+		"city": "Fairbanks",
+		"region": "Alaska"
+	},
+	{
+		"city": "Biloxi",
+		"region": "Mississippi"
+	},
+	{
+		"city": "Sioux City",
+		"region": "Iowa"
+	},
+	{
+		"city": "West Jordan",
+		"region": "Utah"
+	},
+	{
+		"city": "Nampa",
+		"region": "Idaho"
+	},
+	{
+		"city": "Los Angeles",
+		"region": "California"
+	},
+	{
+		"city": "West Valley City",
+		"region": "Utah"
+	}
+]
