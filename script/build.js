@@ -5,6 +5,9 @@ let Rx = require('rx'),
     fse = require('fs-extra'),
     path = require('path'),
     handlebars = require('handlebars'),
+    helpers = require('handlebars-helpers')({
+      handlebars: handlebars
+    }),
     cities = require('../src/cities.json'),
     glob = require('glob-fs')({ gitignore: true }),
     readdir = Rx.Observable.fromNodeCallback(glob.readdir, glob),
