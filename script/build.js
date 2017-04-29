@@ -1,45 +1,64 @@
-#!/usr/bin/env node
 'use strict';
 
 let Rx = require('rx'),
     fs = require('fs'),
+    fse = require('fs-extra'),
     path = require('path'),
     handlebars = require('handlebars'),
     cities = require('../src/cities.json'),
-    readdir = Rx.Observable.fromNodeCallback(fs.readdir),
+    glob = require('glob-fs')({ gitignore: true }),
+    readdir = Rx.Observable.fromNodeCallback(glob.readdir, glob),
     readFile = Rx.Observable.fromNodeCallback(fs.readFile),
     writeFile = Rx.Observable.fromNodeCallback(fs.writeFile),
     mkdir = Rx.Observable.fromNodeCallback(fs.mkdir),
-    exists = Rx.Observable.fromCallback(fs.exists);
+    exists = Rx.Observable.fromCallback(fs.exists),
+    copy = Rx.Observable.fromCallback(fse.copy);
 
-readdir('./src')
-.flatMap(function(filenames) {
-  return filenames;
-})
-.filter(function(filename) {
-  console.log(filename)
-  return filename.endsWith('.hbs');
-})
-.flatMap(function(filename) {
-  console.log(filename)
-  return readFile('./src/' + filename, 'utf8')
-  .map(function(template) {
-    var hbs = handlebars.compile(template);
-    var data = {
-      cities : cities
-    }
-    var html = hbs(data);
-    return {
-      filename: filename.replace(/\.hbs/, '.html'),
-      contents: html
-    }
+function buildHbs(filename) {
+  return readFile(filename, 'utf8')
+    .flatMap(function(template) {
+      var hbs = handlebars.compile(template);
+      var data = {
+        cities : cities
+      }
+      var html = hbs(data);
+      let target = filename.replace(/^src/, 'dist').replace(/\.hbs/, '.html');
+      return writeFile(target, html)
+        .map(function() {
+          return target;
+        });
+    });
+}
+
+function run() {
+  readdir('./src/**/*.{hbs,js,html}')
+  .flatMap(function(filenames) {
+    return Rx.Observable.forkJoin(
+      filenames.map(function(filename) {
+        console.log(filename);
+        let type = path.extname(filename);
+        console.log('type', type)
+        switch(type) {
+          case '.hbs':
+            return buildHbs(filename);
+            break;
+          default:
+            let target = filename.replace(/^src/, 'dist');
+            return copy(filename, target)
+            .map(function() {
+              return target;
+            });
+        }
+      })
+    )
   })
-})
-.flatMap(function(target) {
-  return writeFile('./dist/' + target.filename, target.contents);
-})
-.subscribe(function() {
-  console.log('Generated the pages');
-}, function(error) {
-  throw error;
-});
+  .subscribe(function(filenames) {
+    console.log('Generated the pages', filenames);
+  }, function(error) {
+    throw error;
+  });
+}
+
+module.exports = {
+  run: run
+}

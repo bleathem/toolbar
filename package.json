@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "copy": "copy src/**/*.html dist/",
-    "build": "./script/build.js",
-    "watch": "watch ./script/build.js src",
+    "copy": "copy src/**/*.{html,js} dist/",
+    "build": "./script/cli.js build",
+    "watch": "./script/cli.js watch",
     "serve": "browser-sync start --server --port 8080 --files 'dist/**/*' --startPath 'dist'",
-    "start": "npm run watch & npm run serve"
+    "start": "npm run build && npm run watch & npm run serve"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,8 @@
   "devDependencies": {
     "browser-sync": "^2.18.2",
     "copy": "^0.3.0",
+    "fs-extra": "^3.0.0",
+    "glob-fs": "^0.1.6",
     "handlebars": "^4.0.6",
     "handlebars-helpers": "^0.7.7",
     "rx": "^4.1.0",
