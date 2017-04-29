@@ -93,17 +93,16 @@
       <div class="col-sm-12">
         <form class="toolbar-pf-actions">
           <div class="form-group toolbar-pf-filter">
-            <label class="sr-only" for="filter">Name</label>
+            <label class="sr-only" for="filter">State</label>
             <div class="input-group">
               <div class="input-group-btn">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Name <span class="caret"></span></button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">State <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                  <li class="selected"><a href="#">Name</a></li>
-                  <li><a href="#">Type</a></li>
-                  <li><a href="#">Color</a></li>
+                  <li class="selected"><a href="#">State</a></li>
+                  <li><a href="#">City</a></li>
                 </ul>
               </div>
-              <input type="text" class="form-control" id="filter" placeholder="Filter By Name...">
+              <input type="text" class="form-control" id="filter" placeholder="Filter By State...">
             </div>
           </div>
           <div class="form-group">
@@ -3372,7 +3371,7 @@
             <thead>
               <tr>
                 <th class="table-view-pf-select sorting_disabled" rowspan="1" colspan="1" aria-label="Select all rows"><label class="sr-only" for="selectAll">Select all rows</label></th>
-                <th class="sorting_asc" tabindex="0" aria-controls="table1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="City: activate to sort column descending">City</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="table1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="State: activate to sort column descending">State</th>
                 <th class="sorting" tabindex="0" aria-controls="table1" rowspan="1" colspan="1" aria-label="State: activate to sort column ascending">State</th>
                 <th colspan="2" rowspan="1">Actions</th>
               </tr>
@@ -8455,7 +8454,7 @@
   <script>
   $(function() {
     // matchHeight the contents of each .card-pf and then the .card-pf itself
-    $(".card-pf > .card-pf-body").matchHeight();
+    // $(".card-pf > .card-pf-body").matchHeight();
   });
   </script>
 </body></html>
