@@ -216,29 +216,33 @@
     }
     setTimeout(function() {
       console.log($filter.data('key'), $filter.val());
-      applyFilter($filter.data('key'), $filter.val().toLowerCase());
+      updateFilterState($filter.data('key'), $filter.val().toLowerCase());
+      applyFilters();
     });
   }
 
-  function applyFilter(key, value) {
+  function applyFilters() {
     $tableItems.removeClass('filtered');
     $cardItems.removeClass('filtered');
     $listItems.removeClass('filtered');
 
-    $tableItems.filter(function() {
-      return !$(this).data(key).toLowerCase().startsWith(value);
-    }).addClass('filtered');
-    $cardItems.filter(function() {
-      return !$(this).data(key).toLowerCase().startsWith(value);
-    }).addClass('filtered');
-    $listItems.filter(function() {
-      return !$(this).data(key).toLowerCase().startsWith(value);
-    }).addClass('filtered');
-    updateFilterLabel(key, value);
+    let filters = $filters.data('saved') || {};
+    for (key in filters) {
+      let value = filters[key];
+      $tableItems.filter(function() {
+        return !$(this).data(key).toLowerCase().startsWith(value);
+      }).addClass('filtered');
+      $cardItems.filter(function() {
+        return !$(this).data(key).toLowerCase().startsWith(value);
+      }).addClass('filtered');
+      $listItems.filter(function() {
+        return !$(this).data(key).toLowerCase().startsWith(value);
+      }).addClass('filtered');
+    }
     init();
   }
 
-  function updateFilterLabel(key, value) {
+  function updateFilterState(key, value) {
     let saved = $filters.data('saved') || {};
     if (value === null || !value.length) {
       delete saved[key];
@@ -246,10 +250,14 @@
       saved[key] = value;
     }
     $filters.data('saved', saved);
+    updateFilterLabels(saved);
+  }
+
+  function updateFilterLabels(filters) {
     let $list = $filters.find('ul');
     $list.children().remove();
-    for (_key in saved) {
-      let _value = saved[_key];
+    for (_key in filters) {
+      let _value = filters[_key];
       let html = `<li style="display: block;" data-key="${_key}"><span class="label label-info">${_key}: ${_value}<a href="#remove"><span class="pficon pficon-close"></span></a></span></li>`;
       $list.append(html);
     }
@@ -261,7 +269,7 @@
       4: 'Four'
     }
     let text = '';
-    let count = Object.keys(saved).length;
+    let count = Object.keys(filters).length;
     if (count > 0) {
       text = numbers[count] + ' Filter';
       text += count > 1 ? 's' : '';
@@ -274,12 +282,14 @@
   function removeFilter(e) {
     let $filter = $(this).parents('li');
     let key = $filter.data('key');
-    updateFilterLabel(key, null);
+    updateFilterState(key, null);
+    applyFilters();
   }
 
   function removeAllFilters(e) {
     $filters.data('saved', {});
-    updateFilterLabel(null, null);
+    updateFilterState(null, null);
+    applyFilters();
   }
 
   function changeFilterKey(e) {
