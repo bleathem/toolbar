@@ -7,7 +7,7 @@
     "copy": "copy src/**/*.{html,js} dist/",
     "build": "./script/cli.js build",
     "watch": "./script/cli.js watch",
-    "serve": "browser-sync start --server --port 8080 --files 'dist/**/*' --startPath 'dist'",
+    "serve": "browser-sync start --server --port 8080 --files 'dist/**/*' --startPath 'dist' --reload-debounce 100",
     "start": "npm run build && npm run watch & npm run serve"
   },
   "repository": {

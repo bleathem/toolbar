@@ -38,9 +38,7 @@ function run() {
   .flatMap(function(filenames) {
     return Rx.Observable.forkJoin(
       filenames.map(function(filename) {
-        console.log(filename);
         let type = path.extname(filename);
-        console.log('type', type)
         switch(type) {
           case '.hbs':
             return buildHbs(filename);
@@ -56,7 +54,7 @@ function run() {
     )
   })
   .subscribe(function(filenames) {
-    console.log('Generated the pages', filenames);
+    // console.log('Generated the pages', filenames);
   }, function(error) {
     throw error;
   });

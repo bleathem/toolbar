@@ -35,6 +35,9 @@
   .toolbar-pf-view-selector ul li.active .btn-link {
     color: #0088ce;
   }
+  .filtered {
+        display: none;
+  }
   </style>
 </head>
 <body class="cards-pf" cz-shortcut-listen="true">
@@ -102,7 +105,7 @@
                   <li><a href="#">City</a></li>
                 </ul>
               </div>
-              <input type="text" class="form-control" id="filter" placeholder="Filter By State...">
+              <input type="text" class="form-control" id="filter" placeholder="Filter By State..." data-key="state">
             </div>
           </div>
           <div class="form-group">
@@ -158,7 +161,7 @@
       <div class="tab-pane container-fluid" id="list">
         <div class="list-group list-view-pf list-view-pf-view">
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Olathe" data-state="Kansas">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -190,7 +193,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Warren" data-state="Michigan">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -222,7 +225,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Kapolei" data-state="Hawaii">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -254,7 +257,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Flint" data-state="Michigan">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -286,7 +289,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Colorado Springs" data-state="Colorado">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -318,7 +321,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Kenosha" data-state="Wisconsin">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -350,7 +353,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Paradise" data-state="Nevada">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -382,7 +385,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Detroit" data-state="Michigan">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -414,7 +417,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Provo" data-state="Utah">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -446,7 +449,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Boise" data-state="Idaho">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -478,7 +481,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Sterling Heights" data-state="Michigan">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -510,7 +513,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Rutland" data-state="Vermont">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -542,7 +545,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Lansing" data-state="Michigan">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -574,7 +577,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Baton Rouge" data-state="Louisiana">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -606,7 +609,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item ">
+          <div class="list-group-item " data-city="Shreveport" data-state="Louisiana">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -638,7 +641,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Burlington" data-state="Vermont">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -670,7 +673,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="West Valley City" data-state="Utah">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -702,7 +705,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Cedar Rapids" data-state="Iowa">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -734,7 +737,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Huntsville" data-state="Alabama">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -766,7 +769,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Shreveport" data-state="Louisiana">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -798,7 +801,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Casper" data-state="Wyoming">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -830,7 +833,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Sandy" data-state="Utah">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -862,7 +865,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Salt Lake City" data-state="Utah">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -894,7 +897,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Little Rock" data-state="Arkansas">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -926,7 +929,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Athens" data-state="Georgia">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -958,7 +961,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Salem" data-state="Oregon">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -990,7 +993,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="College" data-state="Alaska">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1022,7 +1025,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Billings" data-state="Montana">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1054,7 +1057,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Colorado Springs" data-state="Colorado">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1086,7 +1089,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Shreveport" data-state="Louisiana">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1118,7 +1121,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Columbia" data-state="Maryland">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1150,7 +1153,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Fairbanks" data-state="Alaska">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1182,7 +1185,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Milwaukee" data-state="Wisconsin">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1214,7 +1217,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Cleveland" data-state="Ohio">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1246,7 +1249,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Bangor" data-state="Maine">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1278,7 +1281,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Madison" data-state="Wisconsin">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1310,7 +1313,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Racine" data-state="Wisconsin">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1342,7 +1345,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Saint Paul" data-state="Minnesota">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1374,7 +1377,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Naperville" data-state="Illinois">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1406,7 +1409,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Sioux City" data-state="Iowa">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1438,7 +1441,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Waterbury" data-state="Connecticut">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1470,7 +1473,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Montpelier" data-state="Vermont">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1502,7 +1505,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Mesa" data-state="Arizona">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1534,7 +1537,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Birmingham" data-state="Alabama">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1566,7 +1569,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Bridgeport" data-state="Connecticut">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1598,7 +1601,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Independence" data-state="Missouri">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1630,7 +1633,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Baltimore" data-state="Maryland">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1662,7 +1665,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Jonesboro" data-state="Arkansas">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1694,7 +1697,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Athens" data-state="Georgia">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1726,7 +1729,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Tampa" data-state="Florida">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1758,7 +1761,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Salt Lake City" data-state="Utah">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1790,7 +1793,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Idaho Falls" data-state="Idaho">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1822,7 +1825,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Anchorage" data-state="Alaska">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1854,7 +1857,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Madison" data-state="Wisconsin">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1886,7 +1889,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Overland Park" data-state="Kansas">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1918,7 +1921,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Jacksonville" data-state="Florida">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1950,7 +1953,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="West Jordan" data-state="Utah">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -1982,7 +1985,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Lewiston" data-state="Maine">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2014,7 +2017,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Clarksville" data-state="Tennessee">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2046,7 +2049,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Biloxi" data-state="Mississippi">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2078,7 +2081,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Billings" data-state="Montana">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2110,7 +2113,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Little Rock" data-state="Arkansas">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2142,7 +2145,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Fairbanks" data-state="Alaska">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2174,7 +2177,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Ketchikan" data-state="Alaska">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2206,7 +2209,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Reno" data-state="Nevada">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2238,7 +2241,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Gaithersburg" data-state="Maryland">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2270,7 +2273,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Aurora" data-state="Illinois">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2302,7 +2305,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Carson City" data-state="Nevada">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2334,7 +2337,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Sandy" data-state="Utah">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2366,7 +2369,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="San Jose" data-state="California">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2398,7 +2401,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Norman" data-state="Oklahoma">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2430,7 +2433,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Olathe" data-state="Kansas">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2462,7 +2465,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Flint" data-state="Michigan">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2494,7 +2497,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Norman" data-state="Oklahoma">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2526,7 +2529,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Shreveport" data-state="Louisiana">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2558,7 +2561,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Laramie" data-state="Wyoming">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2590,7 +2593,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Green Bay" data-state="Wisconsin">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2622,7 +2625,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Annapolis" data-state="Maryland">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2654,7 +2657,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Helena" data-state="Montana">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2686,7 +2689,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Virginia Beach" data-state="Virginia">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2718,7 +2721,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Anchorage" data-state="Alaska">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2750,7 +2753,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Carson City" data-state="Nevada">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2782,7 +2785,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Springdale" data-state="Arkansas">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2814,7 +2817,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Gulfport" data-state="Mississippi">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2846,7 +2849,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Glendale" data-state="Arizona">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2878,7 +2881,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Bellevue" data-state="Nebraska">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2910,7 +2913,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Virginia Beach" data-state="Virginia">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2942,7 +2945,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="San Antonio" data-state="Texas">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -2974,7 +2977,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Richmond" data-state="Virginia">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -3006,7 +3009,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="South Portland" data-state="Maine">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -3038,7 +3041,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="St. Petersburg" data-state="Florida">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -3070,7 +3073,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Glendale" data-state="Arizona">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -3102,7 +3105,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Fairbanks" data-state="Alaska">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -3134,7 +3137,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Biloxi" data-state="Mississippi">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -3166,7 +3169,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Sioux City" data-state="Iowa">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -3198,7 +3201,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="West Jordan" data-state="Utah">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -3230,7 +3233,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Nampa" data-state="Idaho">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -3262,7 +3265,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="Los Angeles" data-state="California">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -3294,7 +3297,7 @@
           </div>
           <!-- /listitem -->
           <!-- listitem -->
-          <div class="list-group-item hidden">
+          <div class="list-group-item hidden" data-city="West Valley City" data-state="Utah">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -3378,7 +3381,7 @@
             </thead>
             <tbody>
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Olathe" data-state="Kansas">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Olathe</td>
                 <td>Kansas</td>
@@ -3401,7 +3404,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Warren" data-state="Michigan">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Warren</td>
                 <td>Michigan</td>
@@ -3424,7 +3427,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Kapolei" data-state="Hawaii">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Kapolei</td>
                 <td>Hawaii</td>
@@ -3447,7 +3450,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Flint" data-state="Michigan">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Flint</td>
                 <td>Michigan</td>
@@ -3470,7 +3473,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Colorado Springs" data-state="Colorado">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Colorado Springs</td>
                 <td>Colorado</td>
@@ -3493,7 +3496,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Kenosha" data-state="Wisconsin">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Kenosha</td>
                 <td>Wisconsin</td>
@@ -3516,7 +3519,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Paradise" data-state="Nevada">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Paradise</td>
                 <td>Nevada</td>
@@ -3539,7 +3542,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Detroit" data-state="Michigan">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Detroit</td>
                 <td>Michigan</td>
@@ -3562,7 +3565,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Provo" data-state="Utah">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Provo</td>
                 <td>Utah</td>
@@ -3585,7 +3588,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Boise" data-state="Idaho">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Boise</td>
                 <td>Idaho</td>
@@ -3608,7 +3611,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Sterling Heights" data-state="Michigan">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Sterling Heights</td>
                 <td>Michigan</td>
@@ -3631,7 +3634,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Rutland" data-state="Vermont">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Rutland</td>
                 <td>Vermont</td>
@@ -3654,7 +3657,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Lansing" data-state="Michigan">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Lansing</td>
                 <td>Michigan</td>
@@ -3677,7 +3680,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Baton Rouge" data-state="Louisiana">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Baton Rouge</td>
                 <td>Louisiana</td>
@@ -3700,7 +3703,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="">
+              <tr class="" data-city="Shreveport" data-state="Louisiana">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Shreveport</td>
                 <td>Louisiana</td>
@@ -3723,7 +3726,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Burlington" data-state="Vermont">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Burlington</td>
                 <td>Vermont</td>
@@ -3746,7 +3749,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="West Valley City" data-state="Utah">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">West Valley City</td>
                 <td>Utah</td>
@@ -3769,7 +3772,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Cedar Rapids" data-state="Iowa">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Cedar Rapids</td>
                 <td>Iowa</td>
@@ -3792,7 +3795,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Huntsville" data-state="Alabama">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Huntsville</td>
                 <td>Alabama</td>
@@ -3815,7 +3818,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Shreveport" data-state="Louisiana">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Shreveport</td>
                 <td>Louisiana</td>
@@ -3838,7 +3841,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Casper" data-state="Wyoming">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Casper</td>
                 <td>Wyoming</td>
@@ -3861,7 +3864,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Sandy" data-state="Utah">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Sandy</td>
                 <td>Utah</td>
@@ -3884,7 +3887,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Salt Lake City" data-state="Utah">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Salt Lake City</td>
                 <td>Utah</td>
@@ -3907,7 +3910,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Little Rock" data-state="Arkansas">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Little Rock</td>
                 <td>Arkansas</td>
@@ -3930,7 +3933,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Athens" data-state="Georgia">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Athens</td>
                 <td>Georgia</td>
@@ -3953,7 +3956,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Salem" data-state="Oregon">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Salem</td>
                 <td>Oregon</td>
@@ -3976,7 +3979,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="College" data-state="Alaska">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">College</td>
                 <td>Alaska</td>
@@ -3999,7 +4002,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Billings" data-state="Montana">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Billings</td>
                 <td>Montana</td>
@@ -4022,7 +4025,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Colorado Springs" data-state="Colorado">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Colorado Springs</td>
                 <td>Colorado</td>
@@ -4045,7 +4048,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Shreveport" data-state="Louisiana">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Shreveport</td>
                 <td>Louisiana</td>
@@ -4068,7 +4071,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Columbia" data-state="Maryland">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Columbia</td>
                 <td>Maryland</td>
@@ -4091,7 +4094,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Fairbanks" data-state="Alaska">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Fairbanks</td>
                 <td>Alaska</td>
@@ -4114,7 +4117,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Milwaukee" data-state="Wisconsin">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Milwaukee</td>
                 <td>Wisconsin</td>
@@ -4137,7 +4140,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Cleveland" data-state="Ohio">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Cleveland</td>
                 <td>Ohio</td>
@@ -4160,7 +4163,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Bangor" data-state="Maine">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Bangor</td>
                 <td>Maine</td>
@@ -4183,7 +4186,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Madison" data-state="Wisconsin">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Madison</td>
                 <td>Wisconsin</td>
@@ -4206,7 +4209,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Racine" data-state="Wisconsin">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Racine</td>
                 <td>Wisconsin</td>
@@ -4229,7 +4232,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Saint Paul" data-state="Minnesota">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Saint Paul</td>
                 <td>Minnesota</td>
@@ -4252,7 +4255,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Naperville" data-state="Illinois">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Naperville</td>
                 <td>Illinois</td>
@@ -4275,7 +4278,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Sioux City" data-state="Iowa">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Sioux City</td>
                 <td>Iowa</td>
@@ -4298,7 +4301,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Waterbury" data-state="Connecticut">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Waterbury</td>
                 <td>Connecticut</td>
@@ -4321,7 +4324,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Montpelier" data-state="Vermont">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Montpelier</td>
                 <td>Vermont</td>
@@ -4344,7 +4347,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Mesa" data-state="Arizona">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Mesa</td>
                 <td>Arizona</td>
@@ -4367,7 +4370,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Birmingham" data-state="Alabama">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Birmingham</td>
                 <td>Alabama</td>
@@ -4390,7 +4393,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Bridgeport" data-state="Connecticut">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Bridgeport</td>
                 <td>Connecticut</td>
@@ -4413,7 +4416,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Independence" data-state="Missouri">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Independence</td>
                 <td>Missouri</td>
@@ -4436,7 +4439,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Baltimore" data-state="Maryland">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Baltimore</td>
                 <td>Maryland</td>
@@ -4459,7 +4462,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Jonesboro" data-state="Arkansas">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Jonesboro</td>
                 <td>Arkansas</td>
@@ -4482,7 +4485,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Athens" data-state="Georgia">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Athens</td>
                 <td>Georgia</td>
@@ -4505,7 +4508,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Tampa" data-state="Florida">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Tampa</td>
                 <td>Florida</td>
@@ -4528,7 +4531,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Salt Lake City" data-state="Utah">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Salt Lake City</td>
                 <td>Utah</td>
@@ -4551,7 +4554,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Idaho Falls" data-state="Idaho">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Idaho Falls</td>
                 <td>Idaho</td>
@@ -4574,7 +4577,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Anchorage" data-state="Alaska">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Anchorage</td>
                 <td>Alaska</td>
@@ -4597,7 +4600,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Madison" data-state="Wisconsin">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Madison</td>
                 <td>Wisconsin</td>
@@ -4620,7 +4623,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Overland Park" data-state="Kansas">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Overland Park</td>
                 <td>Kansas</td>
@@ -4643,7 +4646,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Jacksonville" data-state="Florida">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Jacksonville</td>
                 <td>Florida</td>
@@ -4666,7 +4669,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="West Jordan" data-state="Utah">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">West Jordan</td>
                 <td>Utah</td>
@@ -4689,7 +4692,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Lewiston" data-state="Maine">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Lewiston</td>
                 <td>Maine</td>
@@ -4712,7 +4715,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Clarksville" data-state="Tennessee">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Clarksville</td>
                 <td>Tennessee</td>
@@ -4735,7 +4738,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Biloxi" data-state="Mississippi">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Biloxi</td>
                 <td>Mississippi</td>
@@ -4758,7 +4761,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Billings" data-state="Montana">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Billings</td>
                 <td>Montana</td>
@@ -4781,7 +4784,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Little Rock" data-state="Arkansas">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Little Rock</td>
                 <td>Arkansas</td>
@@ -4804,7 +4807,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Fairbanks" data-state="Alaska">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Fairbanks</td>
                 <td>Alaska</td>
@@ -4827,7 +4830,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Ketchikan" data-state="Alaska">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Ketchikan</td>
                 <td>Alaska</td>
@@ -4850,7 +4853,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Reno" data-state="Nevada">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Reno</td>
                 <td>Nevada</td>
@@ -4873,7 +4876,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Gaithersburg" data-state="Maryland">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Gaithersburg</td>
                 <td>Maryland</td>
@@ -4896,7 +4899,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Aurora" data-state="Illinois">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Aurora</td>
                 <td>Illinois</td>
@@ -4919,7 +4922,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Carson City" data-state="Nevada">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Carson City</td>
                 <td>Nevada</td>
@@ -4942,7 +4945,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Sandy" data-state="Utah">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Sandy</td>
                 <td>Utah</td>
@@ -4965,7 +4968,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="San Jose" data-state="California">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">San Jose</td>
                 <td>California</td>
@@ -4988,7 +4991,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Norman" data-state="Oklahoma">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Norman</td>
                 <td>Oklahoma</td>
@@ -5011,7 +5014,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Olathe" data-state="Kansas">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Olathe</td>
                 <td>Kansas</td>
@@ -5034,7 +5037,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Flint" data-state="Michigan">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Flint</td>
                 <td>Michigan</td>
@@ -5057,7 +5060,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Norman" data-state="Oklahoma">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Norman</td>
                 <td>Oklahoma</td>
@@ -5080,7 +5083,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Shreveport" data-state="Louisiana">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Shreveport</td>
                 <td>Louisiana</td>
@@ -5103,7 +5106,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Laramie" data-state="Wyoming">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Laramie</td>
                 <td>Wyoming</td>
@@ -5126,7 +5129,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Green Bay" data-state="Wisconsin">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Green Bay</td>
                 <td>Wisconsin</td>
@@ -5149,7 +5152,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Annapolis" data-state="Maryland">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Annapolis</td>
                 <td>Maryland</td>
@@ -5172,7 +5175,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Helena" data-state="Montana">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Helena</td>
                 <td>Montana</td>
@@ -5195,7 +5198,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Virginia Beach" data-state="Virginia">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Virginia Beach</td>
                 <td>Virginia</td>
@@ -5218,7 +5221,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Anchorage" data-state="Alaska">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Anchorage</td>
                 <td>Alaska</td>
@@ -5241,7 +5244,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Carson City" data-state="Nevada">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Carson City</td>
                 <td>Nevada</td>
@@ -5264,7 +5267,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Springdale" data-state="Arkansas">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Springdale</td>
                 <td>Arkansas</td>
@@ -5287,7 +5290,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Gulfport" data-state="Mississippi">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Gulfport</td>
                 <td>Mississippi</td>
@@ -5310,7 +5313,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Glendale" data-state="Arizona">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Glendale</td>
                 <td>Arizona</td>
@@ -5333,7 +5336,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Bellevue" data-state="Nebraska">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Bellevue</td>
                 <td>Nebraska</td>
@@ -5356,7 +5359,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Virginia Beach" data-state="Virginia">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Virginia Beach</td>
                 <td>Virginia</td>
@@ -5379,7 +5382,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="San Antonio" data-state="Texas">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">San Antonio</td>
                 <td>Texas</td>
@@ -5402,7 +5405,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Richmond" data-state="Virginia">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Richmond</td>
                 <td>Virginia</td>
@@ -5425,7 +5428,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="South Portland" data-state="Maine">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">South Portland</td>
                 <td>Maine</td>
@@ -5448,7 +5451,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="St. Petersburg" data-state="Florida">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">St. Petersburg</td>
                 <td>Florida</td>
@@ -5471,7 +5474,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Glendale" data-state="Arizona">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Glendale</td>
                 <td>Arizona</td>
@@ -5494,7 +5497,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Fairbanks" data-state="Alaska">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Fairbanks</td>
                 <td>Alaska</td>
@@ -5517,7 +5520,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Biloxi" data-state="Mississippi">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Biloxi</td>
                 <td>Mississippi</td>
@@ -5540,7 +5543,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Sioux City" data-state="Iowa">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Sioux City</td>
                 <td>Iowa</td>
@@ -5563,7 +5566,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="West Jordan" data-state="Utah">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">West Jordan</td>
                 <td>Utah</td>
@@ -5586,7 +5589,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Nampa" data-state="Idaho">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Nampa</td>
                 <td>Idaho</td>
@@ -5609,7 +5612,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="Los Angeles" data-state="California">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">Los Angeles</td>
                 <td>California</td>
@@ -5632,7 +5635,7 @@
               </tr>
               <!-- /tablerow -->
               <!-- tablerow -->
-              <tr class="hidden">
+              <tr class="hidden" data-city="West Valley City" data-state="Utah">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">West Valley City</td>
                 <td>Utah</td>
@@ -5699,7 +5702,7 @@
       <div class="tab-pane container-fluid container-cards-pf active" id="card">
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Olathe" data-state="Kansas">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -5726,7 +5729,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Warren" data-state="Michigan">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -5753,7 +5756,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Kapolei" data-state="Hawaii">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -5780,7 +5783,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Flint" data-state="Michigan">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -5807,7 +5810,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Colorado Springs" data-state="Colorado">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -5834,7 +5837,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Kenosha" data-state="Wisconsin">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -5861,7 +5864,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Paradise" data-state="Nevada">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -5888,7 +5891,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Detroit" data-state="Michigan">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -5915,7 +5918,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Provo" data-state="Utah">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -5942,7 +5945,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Boise" data-state="Idaho">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -5969,7 +5972,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Sterling Heights" data-state="Michigan">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -5996,7 +5999,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Rutland" data-state="Vermont">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6023,7 +6026,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Lansing" data-state="Michigan">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6050,7 +6053,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Baton Rouge" data-state="Louisiana">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6077,7 +6080,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Shreveport" data-state="Louisiana">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6104,7 +6107,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Burlington" data-state="Vermont">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6131,7 +6134,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="West Valley City" data-state="Utah">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6158,7 +6161,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Cedar Rapids" data-state="Iowa">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6185,7 +6188,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Huntsville" data-state="Alabama">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6212,7 +6215,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Shreveport" data-state="Louisiana">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6239,7 +6242,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Casper" data-state="Wyoming">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6266,7 +6269,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Sandy" data-state="Utah">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6293,7 +6296,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Salt Lake City" data-state="Utah">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6320,7 +6323,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Little Rock" data-state="Arkansas">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6347,7 +6350,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Athens" data-state="Georgia">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6374,7 +6377,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Salem" data-state="Oregon">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6401,7 +6404,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="College" data-state="Alaska">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6428,7 +6431,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Billings" data-state="Montana">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6455,7 +6458,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Colorado Springs" data-state="Colorado">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6482,7 +6485,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Shreveport" data-state="Louisiana">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6509,7 +6512,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Columbia" data-state="Maryland">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6536,7 +6539,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Fairbanks" data-state="Alaska">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6563,7 +6566,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Milwaukee" data-state="Wisconsin">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6590,7 +6593,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Cleveland" data-state="Ohio">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6617,7 +6620,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Bangor" data-state="Maine">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6644,7 +6647,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Madison" data-state="Wisconsin">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6671,7 +6674,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Racine" data-state="Wisconsin">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6698,7 +6701,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Saint Paul" data-state="Minnesota">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6725,7 +6728,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Naperville" data-state="Illinois">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6752,7 +6755,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Sioux City" data-state="Iowa">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6779,7 +6782,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Waterbury" data-state="Connecticut">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6806,7 +6809,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Montpelier" data-state="Vermont">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6833,7 +6836,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Mesa" data-state="Arizona">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6860,7 +6863,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Birmingham" data-state="Alabama">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6887,7 +6890,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Bridgeport" data-state="Connecticut">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6914,7 +6917,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Independence" data-state="Missouri">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6941,7 +6944,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Baltimore" data-state="Maryland">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6968,7 +6971,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Jonesboro" data-state="Arkansas">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -6995,7 +6998,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Athens" data-state="Georgia">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7022,7 +7025,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Tampa" data-state="Florida">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7049,7 +7052,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Salt Lake City" data-state="Utah">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7076,7 +7079,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Idaho Falls" data-state="Idaho">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7103,7 +7106,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Anchorage" data-state="Alaska">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7130,7 +7133,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Madison" data-state="Wisconsin">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7157,7 +7160,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Overland Park" data-state="Kansas">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7184,7 +7187,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Jacksonville" data-state="Florida">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7211,7 +7214,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="West Jordan" data-state="Utah">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7238,7 +7241,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Lewiston" data-state="Maine">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7265,7 +7268,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Clarksville" data-state="Tennessee">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7292,7 +7295,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Biloxi" data-state="Mississippi">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7319,7 +7322,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Billings" data-state="Montana">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7346,7 +7349,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Little Rock" data-state="Arkansas">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7373,7 +7376,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Fairbanks" data-state="Alaska">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7400,7 +7403,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Ketchikan" data-state="Alaska">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7427,7 +7430,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Reno" data-state="Nevada">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7454,7 +7457,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Gaithersburg" data-state="Maryland">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7481,7 +7484,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Aurora" data-state="Illinois">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7508,7 +7511,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Carson City" data-state="Nevada">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7535,7 +7538,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Sandy" data-state="Utah">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7562,7 +7565,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="San Jose" data-state="California">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7589,7 +7592,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Norman" data-state="Oklahoma">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7616,7 +7619,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Olathe" data-state="Kansas">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7643,7 +7646,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Flint" data-state="Michigan">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7670,7 +7673,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Norman" data-state="Oklahoma">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7697,7 +7700,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Shreveport" data-state="Louisiana">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7724,7 +7727,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Laramie" data-state="Wyoming">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7751,7 +7754,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Green Bay" data-state="Wisconsin">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7778,7 +7781,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Annapolis" data-state="Maryland">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7805,7 +7808,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Helena" data-state="Montana">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7832,7 +7835,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Virginia Beach" data-state="Virginia">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7859,7 +7862,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Anchorage" data-state="Alaska">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7886,7 +7889,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Carson City" data-state="Nevada">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7913,7 +7916,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Springdale" data-state="Arkansas">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7940,7 +7943,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Gulfport" data-state="Mississippi">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7967,7 +7970,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Glendale" data-state="Arizona">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -7994,7 +7997,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Bellevue" data-state="Nebraska">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -8021,7 +8024,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Virginia Beach" data-state="Virginia">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -8048,7 +8051,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="San Antonio" data-state="Texas">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -8075,7 +8078,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Richmond" data-state="Virginia">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -8102,7 +8105,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="South Portland" data-state="Maine">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -8129,7 +8132,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="St. Petersburg" data-state="Florida">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -8156,7 +8159,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Glendale" data-state="Arizona">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -8183,7 +8186,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Fairbanks" data-state="Alaska">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -8210,7 +8213,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Biloxi" data-state="Mississippi">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -8237,7 +8240,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Sioux City" data-state="Iowa">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -8264,7 +8267,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="West Jordan" data-state="Utah">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -8291,7 +8294,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Nampa" data-state="Idaho">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -8318,7 +8321,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="Los Angeles" data-state="California">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>
@@ -8345,7 +8348,7 @@
         <!-- /card -->
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="West Valley City" data-state="Utah">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>

@@ -4,25 +4,26 @@
   var $tableItems = $('#table').find('tbody tr');
   var $cardItems = $('#card').find('.card-pf-view');
   var $listItems = $('#list').find('.list-group-item');
+  var $filter = $('#filter');
 
   function init () {
-    var total = $tableItems.length;
+    var total = $tableItems.filter(':not(.filtered)').length;
     var pageSize = getPageSize();
     var pageTotal = Math.ceil(total/pageSize);
     //①15 selected 1-②15 of ③75 <1 of ④5>
-    $pageInfo.find('.select-items-dropdown .dropdown-toggle').prepend('0 selected ');
+    $pageInfo.find('.select-items-dropdown .dropdown-toggle').text('0 selected ');
     $pageInfo.find('.pagination-pf-items-current').text('1-' + (pageSize <= total ? pageSize : total));
     $pageInfo.find('.pagination-pf-items-total').text(total);
     $pageInfo.find('.pagination-pf-pages').text(pageTotal);
 
-    $tabPanes.find('.select-items-dropdown .dropdown-toggle').prepend('0 selected ');
+    $tabPanes.find('.select-items-dropdown .dropdown-toggle').text('0 selected ');
     $tabPanes.find('.pagination-pf-items-current').text('1-' + (pageSize <= total ? pageSize : total));
     $tabPanes.find('.pagination-pf-items-total').text(total);
     $tabPanes.find('.pagination-pf-pages').text(pageTotal);
 
-    $tableItems.slice(0, pageSize).removeClass('hidden');
-    $cardItems.slice(0, pageSize).parent().removeClass('hidden');
-    $listItems.slice(0, pageSize).removeClass('hidden');
+    $tableItems.filter(':not(.filtered)').slice(0, pageSize).removeClass('hidden');
+    $cardItems.filter(':not(.filtered)').slice(0, pageSize).parent().removeClass('hidden');
+    $listItems.filter(':not(.filtered)').slice(0, pageSize).removeClass('hidden');
   }
 
   function updateSelectedTotal (count) {
@@ -136,7 +137,7 @@
     $tableItems.filter(':not(.hidden)').addClass('hidden');
     $tableItems.slice(startIndex, endIndex).removeClass('hidden');
     $cardItems.parent().filter(':not(.hidden)').addClass('hidden');
-    $cardItems.slice(startIndex, endIndex).parent().removeClass('hidden');
+    $cardItems.filter(':not(.filtered)').slice(startIndex, endIndex).parent().removeClass('hidden');
     $listItems.filter(':not(.hidden)').addClass('hidden');
     $listItems.slice(startIndex, endIndex).removeClass('hidden');
     updateItemsRange(startIndex + 1, endIndex);
@@ -207,6 +208,33 @@
     }
   }
 
+  function filterChange(e) {
+    if (e.keyCode == 13) {
+      e.preventDefault();
+    }
+    setTimeout(function() {
+      console.log($filter.data('key'), $filter.val());
+      applyFilter($filter.data('key'), $filter.val().toLowerCase());
+    });
+  }
+
+  function applyFilter(key, value) {
+    $tableItems.removeClass('filtered');
+    $cardItems.removeClass('filtered');
+    $listItems.removeClass('filtered');
+
+    $tableItems.filter(function() {
+      return !$(this).data(key).toLowerCase().startsWith(value);
+    }).addClass('filtered');
+    $cardItems.filter(function() {
+      return !$(this).data(key).toLowerCase().startsWith(value);
+    }).addClass('filtered');
+    $listItems.filter(function() {
+      return !$(this).data(key).toLowerCase().startsWith(value);
+    }).addClass('filtered');
+    init();
+  }
+
   $(function () {
     init();
 
@@ -215,6 +243,7 @@
     $('.pagination-pf-forward').on('click', 'a', turnToNextPage);
     $('.pagination-pf-back').on('click', 'a', turnToPreviousPage);
     $('.select-items-dropdown').find('.dropdown-menu').on('click', 'a', batchSelect);
+    $filter.on('keydown', filterChange);
     $pageInfo.on('keydown', '.pagination-pf-page', changePage);
     $tabPanes.on('keydown', '.pagination-pf-page', changePage);
   });
