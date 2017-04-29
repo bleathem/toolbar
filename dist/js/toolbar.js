@@ -224,6 +224,7 @@
   function applyFilters() {
     $tableItems.removeClass('filtered');
     $cardItems.removeClass('filtered');
+    $cardItems.parent().removeClass('filtered');
     $listItems.removeClass('filtered');
 
     let filters = $filters.data('saved') || {};
@@ -234,7 +235,7 @@
       }).addClass('filtered');
       $cardItems.filter(function() {
         return !$(this).data(key).toLowerCase().startsWith(value);
-      }).addClass('filtered');
+      }).addClass('filtered').parent().addClass('filtered');
       $listItems.filter(function() {
         return !$(this).data(key).toLowerCase().startsWith(value);
       }).addClass('filtered');
