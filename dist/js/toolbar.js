@@ -5,6 +5,8 @@
   var $cardItems = $('#card').find('.card-pf-view');
   var $listItems = $('#list').find('.list-group-item');
   var $filter = $('#filter');
+  var $filters = $('#filters');
+  var $filterMenu = $('#filterMenu');
 
   function init () {
     var total = $tableItems.filter(':not(.filtered)').length;
@@ -232,7 +234,64 @@
     $listItems.filter(function() {
       return !$(this).data(key).toLowerCase().startsWith(value);
     }).addClass('filtered');
+    updateFilterLabel(key, value);
     init();
+  }
+
+  function updateFilterLabel(key, value) {
+    let saved = $filters.data('saved') || {};
+    if (value === null || !value.length) {
+      delete saved[key];
+    } else {
+      saved[key] = value;
+    }
+    $filters.data('saved', saved);
+    let $list = $filters.find('ul');
+    $list.children().remove();
+    for (_key in saved) {
+      let _value = saved[_key];
+      let html = `<li style="display: block;" data-key="${_key}"><span class="label label-info">${_key}: ${_value}<a href="#remove"><span class="pficon pficon-close"></span></a></span></li>`;
+      $list.append(html);
+    }
+    let numbers = {
+      0: 'Zero',
+      1: 'One',
+      2: 'Two',
+      3: 'Three',
+      4: 'Four'
+    }
+    let text = '';
+    let count = Object.keys(saved).length;
+    if (count > 0) {
+      text = numbers[count] + ' Filter';
+      text += count > 1 ? 's' : '';
+    } else {
+      $filters.collapse('hide');
+    }
+    $filters.parent().find('a[href="#filters"]').text(text);
+  }
+
+  function removeFilter(e) {
+    let $filter = $(this).parents('li');
+    let key = $filter.data('key');
+    updateFilterLabel(key, null);
+  }
+
+  function removeAllFilters(e) {
+    $filters.data('saved', {});
+    updateFilterLabel(null, null);
+  }
+
+  function changeFilterKey(e) {
+    $this = $(this);
+    let key = $this.data('key');
+    let label = $this.data('label');
+    $this.parents('.input-group-btn').find('button .filterlabel').text(label);
+    $filter.attr('placeholder', `Filter By ${label}...`);
+    $filter.data('key', key);
+    $filter.val('');
+    $filterMenu.children().removeClass('selected');
+    $this.addClass('selected');
   }
 
   $(function () {
@@ -244,6 +303,9 @@
     $('.pagination-pf-back').on('click', 'a', turnToPreviousPage);
     $('.select-items-dropdown').find('.dropdown-menu').on('click', 'a', batchSelect);
     $filter.on('keydown', filterChange);
+    $filters.on('click', 'a[href="#remove"]', removeFilter);
+    $filters.on('click', 'a[href="#clear"]', removeAllFilters);
+    $filterMenu.on('click', 'li', changeFilterKey);
     $pageInfo.on('keydown', '.pagination-pf-page', changePage);
     $tabPanes.on('keydown', '.pagination-pf-page', changePage);
   });

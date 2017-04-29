@@ -35,6 +35,9 @@
   .toolbar-pf-view-selector ul li.active .btn-link {
     color: #0088ce;
   }
+  .filtered {
+        display: none;
+  }
   </style>
 </head>
 <body class="cards-pf" cz-shortcut-listen="true">
@@ -103,13 +106,13 @@
             <label class="sr-only" for="filter">State</label>
             <div class="input-group">
               <div class="input-group-btn">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">State <span class="caret"></span></button>
-                <ul class="dropdown-menu ">
-                  <li class="selected"><a href="#">State</a></li>
-                  <li><a href="#">City</a></li>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="filterlabel">State</span> <span class="caret"></span></button>
+                <ul id="filterMenu" class="dropdown-menu">
+                  <li class="selected" data-key="state" data-label="State"><a href="#">State</a></li>
+                  <li data-key="city" data-label="City"><a href="#">City</a></li>
                 </ul>
               </div>
-              <input type="text" class="form-control" id="filter" placeholder="Filter By State...">
+              <input type="text" class="form-control" id="filter" placeholder="Filter By State..." data-key="state">
             </div>
           </div>
           <div class="form-group" style="float: right; padding-right: 0; border-right: 0;">
@@ -161,14 +164,12 @@
         <!-- filters -->
         <div class="row toolbar-pf-results">
           <div class="col-sm-12">
-            <p><a href="#filters" data-toggle="collapse">Three Filters</a></p>
+            <p><a href="#filters" data-toggle="collapse"></a></p>
             <div id="filters" class="collapse">
               <div class="col-sm-12">
                 <ul class="list-inline">
-                  <li style="display: block;"><span class="label label-info">State: nameofthething<a href="#"><span class="pficon pficon-close"></span></a></span></li>
-                  <li style="display: block;"><span class="label label-info">State: nameofthething<a href="#"><span class="pficon pficon-close"></span></a></span></li>
                 </ul>
-                <p style="display: block;"><a href="#">Clear All Filters</a></p>
+                <p style="display: block;"><a href="#clear">Clear All Filters</a></p>
               </div>
             </div>
           </div>
@@ -180,7 +181,7 @@
         <div class="list-group list-view-pf list-view-pf-view">
           {{#each cities }}
           <!-- listitem -->
-          <div class="list-group-item {{#compare @index '>=' 15}}hidden{{/compare}}">
+          <div class="list-group-item {{#compare @index '>=' 15}}hidden{{/compare}}" data-city="{{this.city}}" data-state="{{this.region}}">
             <div class="list-view-pf-checkbox">
               <input type="checkbox">
             </div>
@@ -266,7 +267,7 @@
             <tbody>
               {{#each cities }}
               <!-- tablerow -->
-              <tr class="{{#compare @index '>=' 15}}hidden{{/compare}}">
+              <tr class="{{#compare @index '>=' 15}}hidden{{/compare}}" data-city="{{this.city}}" data-state="{{this.region}}">
                 <td class=" table-view-pf-select"><label class="sr-only" for="select1">Select row 1</label><input type="checkbox" id="select1" name="select1"></td>
                 <td class="sorting_1">{{this.city}}</td>
                 <td>{{this.region}}</td>
@@ -335,7 +336,7 @@
         {{#each cities }}
         <!-- card -->
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 {{#compare @index '>=' 15}}hidden{{/compare}}">
-          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-multi-select" data-city="{{this.city}}" data-state="{{this.region}}">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
                 <span class="fa fa-map-marker card-pf-icon-circle"></span>

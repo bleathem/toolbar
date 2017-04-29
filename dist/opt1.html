@@ -99,10 +99,10 @@
             <label class="sr-only" for="filter">State</label>
             <div class="input-group">
               <div class="input-group-btn">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">State <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li class="selected"><a href="#">State</a></li>
-                  <li><a href="#">City</a></li>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="filterlabel">State</span> <span class="caret"></span></button>
+                <ul id="filterMenu" class="dropdown-menu">
+                  <li class="selected" data-key="state" data-label="State"><a href="#">State</a></li>
+                  <li data-key="city" data-label="City"><a href="#">City</a></li>
                 </ul>
               </div>
               <input type="text" class="form-control" id="filter" placeholder="Filter By State..." data-key="state">
@@ -143,14 +143,12 @@
         <!-- filters -->
         <div class="row toolbar-pf-results">
           <div class="col-sm-12">
-            <p><a href="#filters" data-toggle="collapse">Three Filters</a></p>
+            <p><a href="#filters" data-toggle="collapse"></a></p>
             <div id="filters" class="collapse">
               <div class="col-sm-12">
                 <ul class="list-inline">
-                  <li style="display: block;"><span class="label label-info">Name: nameofthething<a href="#"><span class="pficon pficon-close"></span></a></span></li>
-                  <li style="display: block;"><span class="label label-info">Name: nameofthething<a href="#"><span class="pficon pficon-close"></span></a></span></li>
                 </ul>
-                <p style="display: block;"><a href="#">Clear All Filters</a></p>
+                <p style="display: block;"><a href="#clear">Clear All Filters</a></p>
               </div>
             </div>
           </div>
