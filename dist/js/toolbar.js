@@ -7,6 +7,7 @@
   var $filter = $('#filter');
   var $filters = $('#filters');
   var $filterMenu = $('#filterMenu');
+  var $filterButton = $('#filterButton');
 
   function init () {
     var total = $tableItems.filter(':not(.filtered)').length;
@@ -213,7 +214,14 @@
   function filterChange(e) {
     if (e.keyCode == 13) {
       e.preventDefault();
+      doFilter();
     }
+    if ($filter.data('instant')) {
+      doFilter();
+    }
+  }
+
+  function doFilter() {
     setTimeout(function() {
       console.log($filter.data('key'), $filter.val());
       updateFilterState($filter.data('key'), $filter.val().toLowerCase());
@@ -259,7 +267,7 @@
     $list.children().remove();
     for (_key in filters) {
       let _value = filters[_key];
-      let html = `<li style="display: block;" data-key="${_key}"><span class="label label-info">${_key}: ${_value}<a href="#remove"><span class="pficon pficon-close"></span></a></span></li>`;
+      let html = `<li style="display: block;" data-key="${_key}"><span class="label label-info"><span style="text-transform: capitalize;">${_key}</span>: ${_value}<a href="#remove"><span class="pficon pficon-close"></span></a></span></li>`;
       $list.append(html);
     }
     let numbers = {
@@ -289,6 +297,7 @@
 
   function removeAllFilters(e) {
     $filters.data('saved', {});
+    $filter.val('');
     updateFilterState(null, null);
     applyFilters();
   }
@@ -317,6 +326,7 @@
     $filters.on('click', 'a[href="#remove"]', removeFilter);
     $filters.on('click', 'a[href="#clear"]', removeAllFilters);
     $filterMenu.on('click', 'li', changeFilterKey);
+    $filterButton.on('click', 'li', filterChange);
     $pageInfo.on('keydown', '.pagination-pf-page', changePage);
     $tabPanes.on('keydown', '.pagination-pf-page', changePage);
   });

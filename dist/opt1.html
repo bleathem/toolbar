@@ -35,8 +35,8 @@
   .toolbar-pf-view-selector ul li.active .btn-link {
     color: #0088ce;
   }
-  .filtered {
-        display: none;
+  .filtered, .list-view-pf .filtered {
+    display: none !important;
   }
   </style>
 </head>
@@ -105,7 +105,7 @@
                   <li data-key="city" data-label="City"><a href="#">City</a></li>
                 </ul>
               </div>
-              <input type="text" class="form-control" id="filter" placeholder="Filter By State..." data-key="state">
+              <input type="text" class="form-control" id="filter" placeholder="Filter By State..." data-key="state" data-instant="true">
             </div>
           </div>
           <div class="form-group">
