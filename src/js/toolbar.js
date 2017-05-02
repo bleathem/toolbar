@@ -326,7 +326,7 @@
     $filters.on('click', 'a[href="#remove"]', removeFilter);
     $filters.on('click', 'a[href="#clear"]', removeAllFilters);
     $filterMenu.on('click', 'li', changeFilterKey);
-    $filterButton.on('click', 'li', filterChange);
+    $filterButton.on('click', doFilter);
     $pageInfo.on('keydown', '.pagination-pf-page', changePage);
     $tabPanes.on('keydown', '.pagination-pf-page', changePage);
   });
